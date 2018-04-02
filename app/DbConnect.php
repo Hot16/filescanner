@@ -81,7 +81,7 @@ class DbConnect
         }
         catch (PDOException $e) {
             if ($e->getCode() == '42S02'){
-                $this->query('CREATE TABLE files (name varchar(150) , size varchar(20) , extension varchar(5) , modification varchar(60) )');
+                $this->query('CREATE TABLE files (name varchar(150) , size varchar(20) , extension varchar(15) , modification varchar(60) )');
                 $files = DirectoryScanner::getTree();
                 foreach ($files as $file){
 
